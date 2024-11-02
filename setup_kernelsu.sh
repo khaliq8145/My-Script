@@ -16,6 +16,7 @@ declare -r WARNING="${ESC}[38;5;214m"
 # Configuration
 KERNELSU_VERSION="v0.9.5"
 DEFCONFIG_PATH="arch/arm64/configs/sunfish_defconfig"
+KERNEL_PATH="android/kernel"  # Path ke direktori kernel
 REQUIRED_CONFIGS=(
     "CONFIG_KPROBES=y"
     "CONFIG_HAVE_KPROBES=y"
@@ -58,18 +59,20 @@ check_kernel_directory() {
 
 setup_kernelsu() {
     log "INFO" "Changing to kernel directory..."
-    cd kernel || {
-        log "ERROR" "Failed to change directory to kernel"
+    cd "$KERNEL_PATH" || {
+        log "ERROR" "Failed to change directory to $KERNEL_PATH"
         exit 1
     }
     
     log "INFO" "Downloading KernelSU setup script..."
-    if ! curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s ${KERNELSU_VERSION}; then
-        log "ERROR" "Failed to download and execute KernelSU setup script"
+    curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s ${KERNELSU_VERSION}
+    
+    if [ $? -eq 0 ]; then
+        log "SUCCESS" "KernelSU setup completed successfully"
+    else
+        log "ERROR" "Failed to setup KernelSU"
         exit 1
     fi
-    
-    log "SUCCESS" "KernelSU setup completed successfully"
 }
 
 modify_defconfig() {
