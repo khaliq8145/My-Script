@@ -121,7 +121,7 @@ CONFIG_KPROBE_EVENTS=y
 
 ## Support
 For issues and support:
-- Telegram: @zetaxbyte
+- Telegram: @Bias_khaloq
 - Check build logs in case of failures
 - Verify your kernel source is compatible
 
