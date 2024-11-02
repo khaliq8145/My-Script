@@ -16,7 +16,7 @@ declare -r WARNING="${ESC}[38;5;214m"
 # Configuration
 KERNELSU_VERSION="v0.9.5"
 DEFCONFIG_PATH="arch/arm64/configs/sunfish_defconfig"
-KERNEL_PATH="android/kernel"  # Path ke direktori kernel
+KERNEL_PATH="android/kernel"  # Path to directoru kernel
 REQUIRED_CONFIGS=(
     "CONFIG_KPROBES=y"
     "CONFIG_HAVE_KPROBES=y"
