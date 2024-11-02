@@ -33,7 +33,7 @@ chmod +x kernel_compile.sh
 ./kernel_compile.sh
 ```
 
-### Configuration Options
+### Configuration Options (for example)
 ```bash
 KERNEL_VERSION="5.0.0"      # Your kernel version
 KERNEL_NAME="MorpheusKernel"    # Your kernel name
