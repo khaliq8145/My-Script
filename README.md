@@ -77,6 +77,7 @@ chmod +x setup_kernelsu.sh
 ### Configuration Settings (for example)
 ```bash
 KERNELSU_VERSION="v0.9.5"   # KernelSU version
+KERNEL_PATH="android/kernel"  # Path to directory kernel
 DEFCONFIG_PATH="arch/arm64/configs/sunfish_defconfig"   # Path to defconfig
 ```
 
