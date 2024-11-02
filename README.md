@@ -36,7 +36,7 @@ chmod +x kernel_compile.sh
 ### Configuration Options
 ```bash
 KERNEL_VERSION="5.0.0"      # Your kernel version
-KERNEL_NAME="ZetaKernel"    # Your kernel name
+KERNEL_NAME="MorpheusKernel"    # Your kernel name
 DEFCONFIG="sunfish_defconfig"   # Device defconfig
 DEVICE_NAME="Pixel 4a"      # Target device
 BUILD_TYPE="STABLE"         # Build type
